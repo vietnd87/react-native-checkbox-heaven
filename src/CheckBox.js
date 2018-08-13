@@ -74,12 +74,12 @@ class CheckBox extends PureComponent {
         const checked = this.state.checked;
         const disabled = this.state.disabled;
         const index = iconDb.findIndex(i => i.iconName === iconName)
-
+        let CheckIcon = defaultIcon;
         if (index !== -1) {
-            defaultIcon = iconDb[index]
+            CheckIcon = iconDb[index]
         }
 
-        const { component: Icon, checkedIconName, uncheckedIconName } = defaultIcon
+        const { component: Icon, checkedIconName, uncheckedIconName } = CheckIcon
 
         return (
             <Icon
